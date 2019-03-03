@@ -1,0 +1,50 @@
+#!/system/bin/sh
+#
+# (C) The ZPX Project
+# Print startup info
+#
+e="\x1b[";c=$e"39;49;00m";y=$e"93;01m";cy=$e"96;01m";r=$e"1;91m";g=$e"92;01m";m=$e"95;01m";
+
+
+L="echo"
+
+$L ""
+$L ""
+$L $cy " 		               yhdbhy"
+$L $cy " 		             gbbddhhgbb"
+$L $cy " 		     yhf   xxbdb    bbdxx   fhy"
+$L $cy " 		   hg   hg/  bbgbdhdbhg  \gh   sh"
+$L $cy " 		     ybn       yhbdhy       nby"             
+$L $cy ""
+$L $cy "           _ _                                       "
+$L $cy "           | (_)_ __   ___  __ _  __ _  ___  ___  ___ "
+$L $cy "           | | | '_ \\ / _ \\/ _\` |/ _\` |/ _ \\/ _ \\/ __|"
+$L $cy "           | | | | | |  __/ (_| | (_| |  __/ (_) \\__ \\"
+$L $cy "           |_|_|_| |_|\\___|\\__,_|\\__, |\\___|\\___/|___/"
+$L $cy "                                 |___/"
+$L ""
+$L $g "Product Brand	     =" `getprop ro.product.brand`
+$L $g "Product Model	     =" `getprop ro.product.model`
+$L $g "Product Device	     =" `getprop ro.product.device`
+$L $g "Build Date          =" `getprop ro.build.date`
+$L $g "Build Product	     =" `getprop ro.build.product`
+$L $g "Build ID            =" `getprop ro.build.id`
+$L $g "Android Version     =" $r`getprop ro.build.version.release`
+$L $g "SDK Version  	     =" $r`getprop ro.build.version.sdk`
+$L $g "Security Patch      =" $r`getprop ro.build.version.security_patch`
+$L ""
+$L $cy "Lineage Device      =" `getprop ro.lineage.device`
+$L $cy "Lineage Build       =" $r`getprop ro.lineage.build.version`
+$L $cy "Lineage Release     =" `getprop ro.lineage.releasetype`
+$L $cy "Lineage Version     =" `getprop ro.lineage.version`
+$L $cy "Lineage Mod Vers.   =" `getprop ro.modversion`
+$L $cy "Lineage Plat Vers.  =" $r`getprop ro.lineage.build.version.plat.sdk`
+$L $cy "Lineage Plat Rev.   =" $r`getprop ro.lineage.build.version.plat.rev`
+$L ""
+$L $g "Disk Space Info     =" $y`df -h | grep userdata`
+$L $g "Ram Info  	     =" $r`free -h | grep Mem`
+$L $g "Swap Info 	     =" $r`free -h | grep Swap`
+$L $g "Processor Version   =" `cat /proc/cpuinfo | grep Hardware`
+$L $cy "Kernel Version      =" `uname -a`
+$L $c ""
+
